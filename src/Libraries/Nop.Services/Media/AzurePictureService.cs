@@ -231,7 +231,7 @@ namespace Nop.Services.Media
             }
 
             if (headers is null)
-                await blobClient.UploadAsync(ms);
+                await blobClient.UploadAsync(ms, overwrite: true);
             else
                 await blobClient.UploadAsync(ms, new BlobUploadOptions { HttpHeaders = headers });
 
